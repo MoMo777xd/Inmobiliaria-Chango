@@ -3,13 +3,14 @@
 		<title>Inmobiliaria Chango</title>
     </head>
     <body>
-			<div>
-                <h1><a href="">Inmobiliaria Chango</a></h1>
-            </div>
-            {{posts}}
-                <h2><a href="">Nuestra Inmobiliaria</a></h2>
-                <p>Dentro de esta inmobiliaria encontraras tus electrodomesticos mas deseados al mejor descuento, nos encontramos en Zona Sur Berazategui, pero tambien poseemos otras sucursales en Quilmes,Varela y Capital. Nos encontramos desde las 8:00 hs hasta las 22:00 hs.</p>
-            {{posts}}	
-        </body>
+	{% for post in posts %}
+        <div>
+            <p>published: {{ post.published_date }}</p>
+            <h1><a href="">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
+    
+    </body>
 </html>
 
